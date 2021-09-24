@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [count, setCount]= useState(0)
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{`You clicked ${count} times`}</Text>
+      <Button color="grey" title="Increase Count" onPress={()=>setCount(prev=>prev+1)}></Button>
       <StatusBar style="auto" />
     </View>
   );
